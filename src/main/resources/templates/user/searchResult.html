@@ -1,0 +1,9 @@
+<div class="container">
+	<div th:each="user:${users}" class="row justify-content-center mt-2">
+		<div>	
+			<a th:href="@{/user/profile/{id}(id=${user.id})}" th:text="${user.name}"/>
+		</div>	
+	</div>
+</div>
+
+

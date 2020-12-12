@@ -1,0 +1,189 @@
+<form th:action="@{/pages/editguide/{id}(id=${guideId})}" method="post">
+
+	<div class="container">
+		<div class="row mt-3 justify-content-around">
+		  <input name="name" class = "form-control mr-sm-2" placeholder="Build-Name">
+		</div>
+		<div class="row justify-content-around">
+	  	 	<div class="col-auto">
+	  	 		Select Champion
+	  	 	</div>
+	  	 	<div class="col-auto">
+	  			<select class="form-control  mr-sm-2 btn btn-dark" name="heroId">
+				    <option th:each="hero:${heroes}" th:value="${hero.id}" th:text="${hero.name}"></option>
+	        	</select>
+	  	 	</div>
+		</div>
+		<div class="row mb-4 justify-content-around">
+			<img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg">
+		</div>
+		
+		<div class="row justify-content-around">
+			<div class="col-auto center-block">
+			  <div class="row">
+		         <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/item/1001.png">
+		      </div>
+			  <div class = "row">
+			    Role
+			  </div>
+			  <div class = "row">
+			    Tank
+			  </div>
+			</div>
+			<div class="col-auto center-block">
+			  <div>
+			    Description here
+			  </div>
+			</div>
+		</div>
+	
+		<div class="row justify-content-around">
+			<h2>
+			  Abilities
+			</h2>
+		</div>
+		
+		<div class="row justify-content-around mt-5">
+			<div class="col-auto center-block">	
+			    <div class="row">
+			      Max Ability
+			    </div>
+				<div class="row">
+				  <select class=" form-control  mr-sm-2 btn btn-dark" name="startWithAbility">
+				    <option value="Q">Q</option>
+				    <option value="W">W</option>
+				    <option value="E">E</option>
+				  </select>
+				</div>
+			</div>
+			<div class="col-auto center-block">	
+			    <div class="row">
+			      Max Ability
+			    </div>
+				<div class="row">
+				  <select class=" form-control  mr-sm-2 btn btn-dark" name="maxAbility">
+				    <option value="Q">Q</option>
+				    <option value="W">W</option>
+				    <option value="E">E</option>
+				  </select>
+				</div>
+			</div>
+		</div>
+	
+		<div class="row justify-content-around">
+			<h1>
+			  Build Items and Masteries
+			</h1>
+		</div>
+	
+	    <div class="container">
+			<div class="row justify-content-around mt-5">
+			   <div class="col-auto center-block">
+			      <div class="row">
+			         Start Item
+			      </div>
+			      <div class="row">
+		  			<select class="form-control  mr-sm-2 btn btn-dark" th:name="items">
+					    <option th:each="item:${items}" th:value="${item.id}" th:text="${item.name}"></option>
+		        	</select>
+			      </div>
+			   </div>
+			   <div class="col-auto">
+			      <div class="row">
+			         First Item
+			      </div>
+		  			<select class="form-control  mr-sm-2 btn btn-dark" name="items">
+					    <option th:each="item:${items}" th:value="${item.id}" th:text="${item.name}"></option>
+		        	</select>
+			   </div>
+			   <div class="col-auto">
+			      <div class="row">
+			         Second Item
+			      </div>
+			      <div class="row">
+		  			<select class="form-control  mr-sm-2 btn btn-dark" name="items">
+					    <option th:each="item:${items}" th:value="${item.id}" th:text="${item.name}"></option>
+		        	</select>
+			      </div>
+			   </div>
+			   <div class="col-auto">
+			      <div class="row">
+			         Thirth Item
+			      </div>
+			      <div class="row">
+		  			<select class="form-control  mr-sm-2 btn btn-dark" name="items">
+					    <option th:each="item:${items}" th:value="${item.id}" th:text="${item.name}"></option>
+		        	</select>
+			      </div>
+			   </div>
+			   </div>
+	    </div>
+		<div class="container">
+			 <div class="row justify-content-around mt-5">
+			    <div class="col-auto">
+			      <div class="row">
+			         Fourth Item
+			      </div>
+			      <div class="row">
+		  			<select class="form-control  mr-sm-2 btn btn-dark" name="items">
+					    <option th:each="item:${items}" th:value="${item.id}" th:text="${item.name}"></option>
+		        	</select>
+			      </div>
+			   </div>
+			   <div class="col-auto">
+			      <div class="row">
+			         Fifth Item
+			      </div>
+			      <div class="row">
+		  			<select class="form-control  mr-sm-2 btn btn-dark" name="items">
+					    <option th:each="item:${items}" th:value="${item.id}" th:text="${item.name}"></option>
+		        	</select>
+			      </div>
+			   </div>
+			   <div class="col-auto">
+			      <div class="row">
+			         Sixth Item
+			      </div>
+			      <div class="row">
+		  				<select class="form-control  mr-sm-2 btn btn-dark" name="items">
+					    <option th:each="item:${items}" th:value="${item.id}" th:text="${item.name}"></option>
+		        	</select>
+			      </div>
+			   </div>
+			   <div class="col-auto center-block">
+			      <div class="row center-block">
+			         Main mastary
+			      </div>
+			      <div class="row">
+		  			<select class="form-control  mr-sm-2 btn btn-dark" name="rune">
+					    <option th:each="rune:${runes}" th:value="${rune.id}" th:text="${rune.name}"></option>
+		        	</select>
+			      </div>
+			   </div>
+			</div>
+		</div>  
+	
+		<div class="row justify-content-around">
+			<h1>
+			  Description
+			</h1>
+		</div>
+	
+		<div class="row justify-content-around mt-5">
+			<textarea name="description" placeholder="ADD HERE THE DESCRIPTION" cols="250" rows="10"></textarea>
+		</div>
+		
+	</div>
+	
+	  <div class="container">
+	    <div class="row mt-2 mb-4 btn-group-justified">
+	        <div class="col btn-group mb-2">
+	             <button id="save-butt" type="submit" class="btn btn-dark selected">Save</button>
+	        </div>
+	        <div class="col btn-group mb-2">
+	             <button id="Edit" class="btn btn-dark selected">Cancel</button>
+	        </div>
+	    </div>
+	  </div>
+</form>
+

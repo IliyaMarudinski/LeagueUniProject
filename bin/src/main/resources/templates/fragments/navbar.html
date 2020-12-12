@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light nav-margin">
+	
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li sec:authorize="isAuthenticated" class="nav-item">
+	    <a class="nav-link" th:href="@{/user/profile}">Profile</a>
+	  </li>
+	  <li sec:authorize="isAuthenticated" class="nav-item">
+	    <a class="nav-link" th:href="@{/logout}">Logout</a>
+	  </li>
+    </ul>
+    <form sec:authorize="isAnonymous()" class="form-inline my-2 my-lg-0">
+<!-- 
+ 		<input class="form-control" name="username" id="inputUsername" aria-describedby="usernameHelp" placeholder="Username">
+		<input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+ -->
+	    <a class="nav-link" th:href="@{/user/login}">Sign up</a>
+	    <a class="nav-link" th:href="@{/user/register}">Register</a>
+    </form>
+    <form th:action="@{searchUser}" sec:authorize="isAuthenticated" class="form-inline my-2 my-lg-0">
+      <a class="nav-link" th:href="@{/pages/newguide}">Add Guide</a>
+      <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link" th:href="@{/admin/editgamedata}">Game Data</a>
+      <input th:name="searchword" class="form-control mr-sm-2" type="search" placeholder="Search user" aria-label="Search">
+      <!-- 
+      <select class=" form-control  mr-sm-2 btn btn-dark" name="searchBy" id="searchBy">
+	    <option value="hero">By Hero</option>
+	    <option value="user">By User</option>
+	  </select>
+       -->
+	  <br><br>
+<!-- 
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+ --> 
+	  <button class="btn btn-dark form-control  mr-sm-2"  type="submit">Search</button>
+    </form>
+  </div>
+</nav>

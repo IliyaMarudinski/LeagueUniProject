@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/head"></head>
+
+<span th:include="fragments/scripts"></span>
+
+<body class='bodyClass' >
+	
+	<div th:include="fragments/navbar"></div>
+	
+	<div th:include="${view}"></div>
+	
+</body>
+
+</html>

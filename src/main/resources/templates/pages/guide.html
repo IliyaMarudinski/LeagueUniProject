@@ -1,0 +1,163 @@
+<div class="container">
+<div th:attr="hidden=${msg == null}" th:class="|alert alert-${msg} alert-dismissable|" role="alert">
+  Success!
+</div>
+	<div class="row justify-content-around">
+	  <h1 th:text="${guide.name}">
+	  </h1>
+	</div>
+<!-- 
+ -->
+	<div class="row justify-content-around">	
+	  <h2 th:text="${hero.name}">
+	  </h2>
+	</div>
+
+	<div class="row mb-4 justify-content-around">
+		<img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg">
+	</div>
+	
+	<div class="row justify-content-around">
+		<div class="col-auto center-block">
+		  <div class="row">
+	         <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/item/1001.png">
+	      </div>
+		  <div class = "row">
+		    Role
+		  </div>
+		  <div class = "row">
+		    Tank
+		  </div>
+		</div>
+		<div class="col-auto center-block">
+		  <div>
+             HERO Description Here
+		  </div>
+		</div>
+	</div>
+
+	<div class="row justify-content-around">
+		<h1>
+		  Build Items and Masteries
+		</h1>
+	</div>
+
+	<div class="row justify-content-around mt-5">
+	   <div class="col-auto center-block">
+	      <div class="row">
+	         Start Item
+	      </div>
+	      <div class="row">
+	         Item Name
+	      </div>
+	      <div class="row">
+	         <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/item/1001.png">
+	      </div>
+	   </div>
+	   <div class="col-auto">
+	      <div class="row">
+	         First Item
+	      </div>
+	      <div class="row">
+	         Item Name
+	      </div>
+	      <div class="row">
+	         <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/item/1001.png">
+	      </div>
+	   </div>
+	      <div class="col-auto">
+	      <div class="row">
+	         Second Item
+	      </div>
+	      <div class="row">
+	         Item Name
+	      </div>
+	      <div class="row">
+	         <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/item/1001.png">
+	      </div>
+	   </div>
+	      <div class="col-auto">
+	      <div class="row">
+	         Thirth Item
+	      </div>
+	      <div class="row">
+	         Item Name
+	      </div>
+	      <div class="row">
+	         <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/item/1001.png">
+	      </div>
+	   </div>
+	      <div class="col-auto">
+	      <div class="row">
+	         Fourth Item
+	      </div>
+	      <div class="row">
+	         Item Name
+	      </div>
+	      <div class="row">
+	         <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/item/1001.png">
+	      </div>
+	   </div>
+	      <div class="col-auto">
+	      <div class="row">
+	         Fifth Item
+	      </div>
+	      <div class="row">
+	         Item Name
+	      </div>
+	      <div class="row">
+	         <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/item/1001.png">
+	      </div>
+	   </div>
+	      <div class="col-auto">
+	      <div class="row">
+	         Sixth Item
+	      </div>
+	      <div class="row">
+	         Item Name
+	      </div>
+	      <div class="row">
+	         <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/item/1001.png">
+	      </div>
+	   </div>
+	   <div class="col-auto center-block">
+	      <div class="row center-block">
+	         Main mastary
+	      </div>
+	      <div class="row center-block">
+	         Item Name
+	      </div>
+	      <div class="row center-block">
+	         <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/item/1001.png">
+	      </div>
+	   </div>
+	</div>
+
+	<div class="row justify-content-around">
+		<h1>
+		  Description
+		</h1>
+	</div>
+
+	<div class="row justify-content-around mt-5">
+	<h1>Giulde Description</h1>
+	 <h3 th:text="${guide.name}">
+	 </h3>
+	</div>
+	
+</div>
+
+  <div class="container">
+    <div class="row mt-2 mb-4 btn-group-justified">
+        <div class="col btn-group mb-2">
+             <a th:attr="hidden=${!isEditable}" th:href="@{/pages/editguide/{id}(id=${guide.id})}" id="Edit" type="button" class="btn btn-dark selected">Edit Guide</a>
+        </div>
+        <div class="col btn-group mb-2">
+             <a th:attr="hidden=${!isEditable}" th:href="@{/pages/deleteguide/{id}(id=${guide.id})}" id="Edit" type="button" class="btn btn-dark selected">Delete Guide</a>
+        </div>
+         <div class="col btn-group mb-2">
+             <a th:href="@{/user/addToFavorites/{id}(id=${guide.id})}" id="add" type="button" class="btn btn-dark selected">Add to Favorites</a>
+        </div>
+    </div>
+  </div>
+
